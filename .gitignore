@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# this file is not of this project
+/ScrimbaRefinedVideo.js
+
 # production
 /build
 
