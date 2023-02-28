@@ -33,3 +33,10 @@
 // }
 
 // export default Receipt;
+
+// git add .
+// git commit -m "Your commit message"
+// git remote add origin <remote-url>
+// git checkout feature-branch
+// git push origin feature-branch
+
