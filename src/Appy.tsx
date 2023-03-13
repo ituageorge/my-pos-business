@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
 import ProductCards from "./pages/HomePage";
-import Items from "./pages/Items";
+// import Items from "./pages/Items";
 // import CartPage from "./pages/CartPage";
 import Register from "./pages/Registration";
 // import Login from "./pages/Login";
@@ -101,7 +101,7 @@ function App() {
 
 
           <Route path="/home" element={<ProductCards />} />
-          <Route path="/items" element={<Items />} />
+          {/* <Route path="/items" element={<Items />} /> */}
           {/* <Route path="/cart" element={<CartPage />} /> */}
           {/* <Route path="/receipt" element={<Receipts />} /> */}
           {/* <Route path="/customers" element={<Customers />} /> */}

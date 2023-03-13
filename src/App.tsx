@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import ProductCards from "./pages/HomePage";
-import Items from "./pages/Items";
 import Register from "./pages/Registration";
 import ForgetPassword from "./pages/ForgetPassword";
 import Reports from "./pages/Reports";
@@ -15,6 +14,10 @@ import Sidebar from "./layout/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import ResponsiveAppBar from "./layout/Navbar";
 import { Box, IconButton, Toolbar } from "@mui/material";
+import ProductCardSelection from "./component/ProductCard";
+import CartPage from "./pages/CartPage";
+// import { CartPage } from "./pages/CartPage";
+
 
 const drawerWidth = 240;
 
@@ -77,6 +80,8 @@ const App: React.FC =() => {
             {/* <MenuIcon /> */}
           </IconButton>
         </Toolbar>
+
+
         <Routes>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/forgetpassword" element={<ForgetPassword />} />
@@ -87,11 +92,17 @@ const App: React.FC =() => {
           <Route path="/errorpage" element={<ErrorPage />} />
 
           <Route path="/home" element={<ProductCards />} />
-          <Route path="/items" element={<Items />} />
+        
           <Route path="/register" element={<Register />} />
 
+          <Route path="/login" element={<ProductCardSelection />} />
+
+
           {/* Uncomment the following routes when implementing corresponding pages */}
-          {/* <Route path="/cart" element={<CartPage />} /> */}
+          <Route path="/cart" element={<CartPage />} />
+          
+          {/* <Route path="/cart" component={() => <CartPage cartItems={[]} />} /> */}
+
           {/* <Route path="/receipt" element={<Receipts />} /> */}
           {/* <Route path="/customers" element={<Customers />} /> */}
           {/* <Route path="/login" element={<Login />} /> */}

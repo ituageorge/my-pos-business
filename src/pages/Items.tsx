@@ -1,58 +1,130 @@
-import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Grid } from '@mui/material';
+// import * as React from 'react';
+// import { useState } from 'react';
+// import { makeStyles } from '@mui/styles';
+// import {
+//   Box,
+//   Button,
+//   Card,
+//   CardActionArea,
+//   // CardActions,
+//   CardContent,
+//   CardMedia,
+//   Grid,
+//   Typography,
+// } from '@mui/material';
 
-const ProductDisplayPage = () => {
-  const products = [
-    {
-      id: 1,
-      name: 'Product 1',
-      description: 'This is a description for product 1',
-      price: 10.99,
-      image: 'https://via.placeholder.com/300x200',
-    },
-    {
-      id: 2,
-      name: 'Product 2',
-      description: 'This is a description for product 2',
-      price: 15.99,
-      image: 'https://via.placeholder.com/300x200',
-    },
-    {
-      id: 3,
-      name: 'Product 3',
-      description: 'This is a description for product 3',
-      price: 20.99,
-      image: 'https://via.placeholder.com/300x200',
-    },
-  ];
+// interface Product {
+//   id: number;
+//   name: string;
+//   image: string;
+//   description: string;
+//   alt: string;
+//   price: number;
+// }
 
-  return (
-    <Grid container spacing={2}>
-      {products.map((product) => (
-        <Grid item key={product.id} xs={12} sm={6} md={4}>
-          <Card sx={{ maxWidth: 345 }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image={product.image}
-              alt={product.name}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {product.name}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {product.description}
-              </Typography>
-              <Typography variant="h6" color="text.primary">
-                ${product.price}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      ))}
-    </Grid>
-  );
-};
+// interface CartItem {
+//   product: Product;
+//   quantity: number;
+// }
 
-export default ProductDisplayPage;
+// interface CartItemPageProps {
+//   cartItems: CartItem[];
+// }
+
+// const useStyles = makeStyles({
+//   root: {
+//     flexGrow: 1,
+//     padding: '20px',
+//   },
+//   card: {
+//     maxWidth: 345,
+//   },
+//   media: {
+//     height: 200,
+//   },
+// });
+
+// export function CartItemPage(props: CartItemPageProps) {
+//   const classes = useStyles();
+
+//   const [totalPrice, setTotalPrice] = useState<number>(0);
+
+//   const handleQuantityChange = (cartItem: CartItem, newQuantity: number) => {
+//     const newCartItems = props.cartItems.map((item) =>
+//       item.product.id === cartItem.product.id
+//         ? { ...item, quantity: newQuantity }
+//         : item
+//     );
+//     props.setCartItems(newCartItems);
+//   };
+
+//   const handleRemoveItem = (cartItem: CartItem) => {
+//     const newCartItems = props.cartItems.filter(
+//       (item) => item.product.id !== cartItem.product.id
+//     );
+//     props.setCartItems(newCartItems);
+//   };
+
+//   React.useEffect(() => {
+//     const newTotalPrice = props.cartItems.reduce(
+//       (acc, item) => acc + item.product.price * item.quantity,
+//       0
+//     );
+//     setTotalPrice(newTotalPrice);
+//   }, [props.cartItems]);
+
+//   return (
+//     <Box className={classes.root}>
+//       <Typography variant="h4">Cart Items</Typography>
+//       <Grid container spacing={2}>
+//         {props.cartItems.map((cartItem) => (
+//           <Grid item xs={12} key={cartItem.product.id}>
+//             <Card className={classes.card}>
+//               <CardActionArea>
+//                 <CardMedia
+//                   className={classes.media}
+//                   image={cartItem.product.image}
+//                   alt={cartItem.product.alt}
+//                 />
+//                 <CardContent>
+//                   <Typography gutterBottom variant="h5" component="h2">
+//                     {cartItem.product.name}
+//                   </Typography>
+//                   <Typography
+//                     variant="body2"
+//                     color="textSecondary"
+//                     component="p"
+//                   >
+//                     {cartItem.product.description}
+//                   </Typography>
+//                   <Box mt={2}>
+//                     <Typography variant="h6">${cartItem.product.price}</Typography>
+//                     <Typography variant="subtitle1">Quantity:</Typography>
+//                     <Button
+//                       variant="outlined"
+//                       color="primary"
+//                       size="small"
+//                       onClick={() => handleQuantityChange(cartItem, cartItem.quantity - 1)}
+//                     >
+//                       -
+//                     </Button>
+//                     <Box component="span" mx={1}>
+//                       <Typography variant="subtitle1">{cartItem.quantity}</Typography>
+//                     </Box>
+//                     <Button
+//                       variant="outlined"
+//                       color="primary"
+//                       size="small"
+//                       onClick={() => handleQuantityChange(cartItem, cartItem.quantity + 1)}
+//                     >
+//                       +
+//                     </Button>
+//                   </Box>
+//                 </CardContent> 
+//               </CardActionArea>
+//             </Card>
+//           </Grid> 
+//         ))} 
+//       </Grid> 
+//     </Box> 
+//   )} 
